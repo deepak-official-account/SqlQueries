@@ -16,9 +16,9 @@ CREATE TABLE dbo.Invoices (
 
 -----update column
 IF(
-    COL_LENGTH (
+    OBJECT_ID (
         'dbo.Invoices',
-        'CustomerName'
+        'U'
     )
 ) IS NOT NULL BEGIN
 ALTER TABLE Invoices
@@ -26,7 +26,7 @@ ALTER COLUMN CustomerNam NVARCHAR (500) NOT NULL END ELSE BEGIN PRINT 'Column No
 
 --Delete Operation
 IF(
-    COL_LENGTH ('dbo.Invoices', 'Amount')
+    OBJECT_ID ('dbo.Invoices', 'U')
 ) IS NOT NULL BEGIN
 ALTER TABLE dbo.Invoices
 DROP COLUMN Amount;

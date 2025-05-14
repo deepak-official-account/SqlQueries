@@ -126,7 +126,7 @@ IF(
     (
         OBJECT_ID ('dbo.GetOperations', 'P')
     )
-) IS NOT NULL BEGIN PRINT 'Deleting Exisitng Procedure'
+) IS NOT NULL BEGIN PRINT 'Deleting Existing Procedure'
 DROP PROCEDURE dbo.GetOperations END
 
 CREATE PROCEDURE [dbo].[GetOperations]
@@ -136,7 +136,7 @@ CREATE PROCEDURE [dbo].[GetOperations]
 AS
 BEGIN
     IF @IsGetAllOperation=1
-	BEGIN
+	iBEGIN
     SELECT * FROM dbo.Employees;
 	END
 
