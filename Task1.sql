@@ -1,3 +1,5 @@
+role : id rolename isAcitve createdat updatedat
+
 use db;
 
 CREATE TABLE ROLES (
@@ -64,11 +66,11 @@ CREATE PROCEDURE [dbo].[GetActiveUserById]
 AS
 BEGIN
     Select u.* FROM Users u inner join Roles r on u.RoleId=r.RoleId WHERE Id=@UserId AND r.IsActive=1;
-	IF(@@ROWCOUNT=0)
-	PRINT ('NO SUCH DATA FOUND');
+	
 
 END;
 GO
+
 DECLARE @UserId INT=99;
 
 --Update 
@@ -90,12 +92,8 @@ CREATE PROCEDURE [dbo].[DeleteUser]
 @UserId INT
 AS
 BEGIN
-  DECLARE @DeletedAt DATETIME = CURRENT_TIMESTAMP;
-  DELETE FROM Users WHERE Id=@UserId ;
-END
-GO;
-;
-;
-;
 
+  DELETE FROM Users WHERE Id=@UserId ;
+END;
+GO
 EXEC [dbo].[GetActiveUserById] @UserId
