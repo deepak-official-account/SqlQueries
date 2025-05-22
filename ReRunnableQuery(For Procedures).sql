@@ -166,4 +166,3 @@ CREATE PROCEDURE [dbo].[GetPaginatedResult]
   SELECT * FROM Employees ORDER BY EmployeeID ASC OFFSET @PageNo-1 ROWS
   FETCH NEXT @Limit ROWS ONLY
   END
-GO

@@ -1,4 +1,3 @@
-role : id rolename isAcitve createdat updatedat
 
 use db;
 

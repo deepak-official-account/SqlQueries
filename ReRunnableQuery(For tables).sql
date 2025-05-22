@@ -16,10 +16,7 @@ CREATE TABLE dbo.Invoices (
 
 -----update column
 IF(
-    OBJECT_ID (
-        'dbo.Invoices',
-        'U'
-    )
+    OBJECT_ID ('dbo.Invoices', 'U')
 ) IS NOT NULL BEGIN
 ALTER TABLE Invoices
 ALTER COLUMN CustomerNam NVARCHAR (500) NOT NULL END ELSE BEGIN PRINT 'Column Not Exist' END
